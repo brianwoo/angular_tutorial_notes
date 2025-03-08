@@ -1,0 +1,22 @@
+<h3>Todos List</h3>
+
+<p *ngIf="!todoItems().length">Loading...</p>
+
+@if (!todoItems().length) {
+<p>Loading...</p>
+}
+
+<app-two-way-binding-ngmodel />
+<app-two-way-binding [(startFrom)]="counterValue" />
+
+
+<form>
+    <label>Filter Todos</label>
+    <input name="searchTodo" [(ngModel)]="searchTerm" placeholder="Search todo..." />
+</form>
+
+<ul class="todos">
+    @for (item of todoItems() | filterTodos : searchTerm(); track item.id) {
+    <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="item" />
+    }
+</ul>

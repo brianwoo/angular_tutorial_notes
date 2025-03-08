@@ -1,0 +1,13 @@
+<div class="container">
+
+    <div class="center">
+        <h1>Brian's Recipes</h1>
+    </div>
+
+    <div class="flex-container">
+        @for (recipe of recipes; track recipe.id) {
+        <app-recipe-card [recipe]="recipe" />
+        }
+    </div>
+
+</div>

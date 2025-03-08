@@ -1,0 +1,60 @@
+@if (!recipe) {
+<div class="container">
+    <h1>No recipe found...</h1>
+</div>
+}
+@else {
+<div class="container container-center">
+    <div class="spacer"></div>
+    <h1>{{ recipe.name }}</h1>
+    <div class="spacer"></div>
+
+    <div class="ingredients-image">
+        <img class="recipe-img" src="{{recipe.image}}" />
+
+        <div>
+            <h2>Ingredients</h2>
+            <mat-list>
+                @for (item of recipe.ingredients; track item) {
+                <mat-list-item>{{item}}</mat-list-item>
+                }
+            </mat-list>
+
+            <div class="recipe-attribute">
+                <hr>
+                <div class="spacer"></div>
+                <div>
+                    <span class="recipe-attribute-title">Difficulty</span><span>{{recipe.difficulty}}</span>
+                </div>
+                <div>
+                    <span class="recipe-attribute-title">Cook Time</span><span>{{recipe.cookTimeMinutes}} mins</span>
+                </div>
+                <div>
+                    <span class="recipe-attribute-title">Prep Time</span><span>{{recipe.prepTimeMinutes}} mins</span>
+                </div>
+                <div>
+                    <span class="recipe-attribute-title">Calories /
+                        serving</span><span>{{recipe.caloriesPerServing}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer-lg"></div>
+    <div>
+        <mat-card class="center" appearance="outlined">
+            <h2>Instructions</h2>
+
+            @for (item of recipe.instructions; track item) {
+            <div>{{item}}</div>
+            <div class="spacer"></div>
+            }
+
+            <div class="spacer-lg"></div>
+        </mat-card>
+    </div>
+
+    <div class="spacer-lg"></div>
+
+</div>
+}

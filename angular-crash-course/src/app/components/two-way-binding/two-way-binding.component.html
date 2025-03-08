@@ -1,0 +1,6 @@
+<div class="twb-section">
+    <h4>Two-Way Binding Custom</h4>
+    <!-- <input [ngModel]="inputValue" (ngModelChange)="inputValue = $event" type="text" /> -->
+    <input type="text" (keyup)="onInputChange($event)" />
+    <!-- <div>Input Value: {{ inputValue }}</div> -->
+</div>

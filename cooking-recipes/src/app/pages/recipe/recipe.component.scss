@@ -1,0 +1,35 @@
+.container-center {
+    text-align: center;
+}
+
+.ingredients-image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.recipe-img {
+    min-width: 40%;
+    // height: 40%;
+}
+
+.recipe-attribute {
+    text-align: left;
+}
+
+.recipe-attribute-title {
+    display: inline-block;
+    width: 140px;
+    padding-top: 5px;
+}
+
+.spacer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.spacer-lg {
+    padding-bottom: 30px;
+}

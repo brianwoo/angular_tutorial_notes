@@ -1,0 +1,19 @@
+.recipe-card {
+    min-width: 500px;
+    height: 200px;
+    margin-bottom: 8px;
+}
+
+.recipe-card:hover {
+    // transform: translateY(-2px);
+    border: 1px solid #565e71;
+}
+
+.recipe-attribute-title {
+    display: inline-block;
+    width: 120px;
+}
+
+.card-section {
+    padding-top: 15px;
+}

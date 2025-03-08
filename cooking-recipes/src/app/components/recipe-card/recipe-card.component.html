@@ -1,0 +1,47 @@
+@if (!recipe) {
+<mat-card class="recipe-card" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>No Recipe Found...</mat-card-title>
+    </mat-card-header>
+</mat-card>
+}
+@else {
+<mat-card class="recipe-card" appearance="outlined" (click)="onRecipeClick(recipe.id)">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>{{recipe.name}}</mat-card-title>
+            <mat-card-subtitle>
+                <div class="card-section">
+                    <div>
+                        <span class="recipe-attribute-title">Prep time</span><span>{{recipe.prepTimeMinutes}}
+                            mins</span>
+                    </div>
+                    <div>
+                        <span class="recipe-attribute-title">Cooking
+                            time</span><span>{{recipe.cookTimeMinutes}} mins</span>
+                    </div>
+                    <div>
+                        <span class="recipe-attribute-title">Serving</span><span>{{recipe.servings}}</span>
+                    </div>
+                </div>
+            </mat-card-subtitle>
+            <img mat-card-md-image src={{recipe.image}} alt={{recipe.name}}>
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="card-section">
+            <mat-chip-set>
+                <!-- <mat-chip>{{recipe.mealType}}</mat-chip>
+                <mat-chip>{{recipe.difficulty}}</mat-chip> -->
+                @for (tag of recipe.tags; track tag) {
+                @if ($count <= 5) { <mat-chip>{{tag}}</mat-chip>
+                    }
+                    }
+            </mat-chip-set>
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="card-section"></div>
+    </mat-card-footer>
+</mat-card>
+}
